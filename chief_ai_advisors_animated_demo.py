@@ -1,5 +1,5 @@
 """
-AI Workflow Animation & Tracker
+Chief AI Advisors: Animated AI Workflow Demo
 Fun and professional simulation of an AI-assisted workflow.
 
 Author: Tristan Becker
@@ -37,19 +37,11 @@ r"""
 """,
 r"""
    (⌐■_■)  
-   Let's process the data...
+   Let's go! 🚀
 """,
 r"""
    (⌐■_■)  
-   AI workflow engaged!
-""",
-r"""
-   (⌐■_■)  
-   Tracking all steps...
-""",
-r"""
-   (⌐■_■)  
-   Almost done!
+   Chief AI Advisors style!
 """
 ]
 
@@ -63,9 +55,8 @@ workflow_steps = [
     "Upload documents",
     "Run automated quality checks",
     "Notify team of completion",
-    "Generate compliance report",
-    "Archive workflow logs",
-    "Send final summary email"
+    "Archive workflow log",
+    "Send final report to stakeholders"
 ]
 
 # ----------------------
@@ -108,9 +99,4 @@ if __name__ == "__main__":
     print("🚀 AI workflow mode activated! Tristan Becker | Chief AI Advisors")
     print("🌐 Learn more about our AI-enabled systems at: https://chiefaiadvisors.com")
     
-    # Keep window open for double-click runs
-    try:
-        input("\nPress Enter to exit...")
-    except EOFError:
-        # In case input() fails (rare), sleep for 10 seconds
-        time.sleep(10)
+    input("\nPress Enter to exit...")   # <-- Keeps terminal open
