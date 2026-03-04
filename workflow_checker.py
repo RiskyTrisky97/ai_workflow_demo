@@ -10,7 +10,7 @@ import time
 import os
 
 # ----------------------
-# ASCII Animation Frames (Extended)
+# ASCII Animation Frames
 # ----------------------
 animation_frames = [
 r"""
@@ -37,33 +37,19 @@ r"""
 """,
 r"""
    (⌐■_■)  
-   Crunching data...
-   <)   )╯  
-   /    \
+   Let's process the data...
 """,
 r"""
    (⌐■_■)  
-   Validating...
-   <)   )╯  
-   /    \
+   AI workflow engaged!
 """,
 r"""
    (⌐■_■)  
-   Uploading documents...
-   <)   )╯  
-   /    \
+   Tracking all steps...
 """,
 r"""
    (⌐■_■)  
-   Running checks...
-   <)   )╯  
-   /    \
-""",
-r"""
-   (⌐■_■)  
-   Workflow complete!
-   <)   )╯  
-   /    \
+   Almost done!
 """
 ]
 
@@ -77,10 +63,9 @@ workflow_steps = [
     "Upload documents",
     "Run automated quality checks",
     "Notify team of completion",
-    "Send confirmation email to client",
-    "Archive workflow records",
-    "Prepare summary report",
-    "Mark workflow as completed in system"
+    "Generate compliance report",
+    "Archive workflow logs",
+    "Send final summary email"
 ]
 
 # ----------------------
@@ -123,4 +108,9 @@ if __name__ == "__main__":
     print("🚀 AI workflow mode activated! Tristan Becker | Chief AI Advisors")
     print("🌐 Learn more about our AI-enabled systems at: https://chiefaiadvisors.com")
     
-    input("\nPress Enter to exit...")   # <-- Keeps terminal open
+    # Keep window open for double-click runs
+    try:
+        input("\nPress Enter to exit...")
+    except EOFError:
+        # In case input() fails (rare), sleep for 10 seconds
+        time.sleep(10)
