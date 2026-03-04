@@ -10,7 +10,7 @@ import time
 import os
 
 # ----------------------
-# ASCII Animation Frames (extended)
+# ASCII Animation Frames (Extended)
 # ----------------------
 animation_frames = [
 r"""
@@ -37,19 +37,33 @@ r"""
 """,
 r"""
    (⌐■_■)  
-   Engaging AI systems...
+   Crunching data...
+   <)   )╯  
+   /    \
 """,
 r"""
    (⌐■_■)  
-   Automating tasks...
+   Validating...
+   <)   )╯  
+   /    \
 """,
 r"""
    (⌐■_■)  
-   Optimizing workflows...
+   Uploading documents...
+   <)   )╯  
+   /    \
 """,
 r"""
    (⌐■_■)  
-   All systems go!
+   Running checks...
+   <)   )╯  
+   /    \
+""",
+r"""
+   (⌐■_■)  
+   Workflow complete!
+   <)   )╯  
+   /    \
 """
 ]
 
@@ -63,9 +77,10 @@ workflow_steps = [
     "Upload documents",
     "Run automated quality checks",
     "Notify team of completion",
-    "Generate compliance report",
-    "Archive documents securely",
-    "Send confirmation to client",
+    "Send confirmation email to client",
+    "Archive workflow records",
+    "Prepare summary report",
+    "Mark workflow as completed in system"
 ]
 
 # ----------------------
@@ -107,3 +122,5 @@ if __name__ == "__main__":
     summary(workflow_steps)             # Print final summary
     print("🚀 AI workflow mode activated! Tristan Becker | Chief AI Advisors")
     print("🌐 Learn more about our AI-enabled systems at: https://chiefaiadvisors.com")
+    
+    input("\nPress Enter to exit...")   # <-- Keeps terminal open
