@@ -1,7 +1,6 @@
 """
 Chief AI Advisors Animated Demo
 Fun and professional simulation of AI-assisted workflows and services.
-
 Author: Tristan Becker
 Company: Chief AI Advisors
 Website: https://chiefaiadvisors.com
@@ -9,60 +8,72 @@ Phone: +1 (555) 123-4567
 Toll-Free: +1-833-313-7714
 Email: chiefaiadvisors@gmail.com
 """
-
 import time
 import os
 
 # ----------------------
 # ASCII Animation Frames
 # ----------------------
-animation_frames = [
+
+# Phase 1: Character builds up (body stays visible throughout)
+build_frames = [
 r"""
-   (•_•)  
+   (•_•)
+   |    |
+   /    \
 """,
 r"""
-   (•_•)  
+   (•_•)
    <)   )╯
-""",
-r"""
-   (•_•)  
-   <)   )╯  
    /    \
 """,
 r"""
-   (•_•)  
-  ⌐■-■)  
-   <)   )╯  
+   (•_•)
+  ⌐■-■)
+   <)   )╯
    /    \
 """,
 r"""
-   (⌐■_■)  
+   (⌐■_■)
+   <)   )╯
+   /    \
+
    Ready for AI workflow!
 """,
-r"""
-   (⌐■_■)  
-   🚀 Launching AI solutions...
-""",
-r"""
-   (⌐■_■)  
-   📊 Data Analytics & Insights
-""",
-r"""
-   (⌐■_■)  
-   ⚖ Compliance & Reporting
-""",
-r"""
-   (⌐■_■)  
-   🌐 SEO & AEO Optimization
-""",
-r"""
-   (⌐■_■)  
-   🤖 Custom AI Tools & Automation
-""",
-r"""
-   (⌐■_■)  
-   ✅ Chief AI Advisors at work!
-"""
+]
+
+# Phase 2: Finger gun poses — body always present, one arm pointing
+finger_gun_messages = [
+    ("🚀 Launching AI solutions...",        r"""
+   (⌐■_■)
+   <)   )╯ 
+   /    \
+"""),
+    ("📊 Data Analytics & Insights",         r"""
+   (⌐■_■)
+    /)  )>
+   /    \
+"""),
+    ("⚖  Compliance & Reporting",            r"""
+   (⌐■_■)
+   <)   )╯ 
+   /    \
+"""),
+    ("🌐 SEO & AEO Optimization",            r"""
+   (⌐■_■)
+    /)  )>
+   /    \
+"""),
+    ("🤖 Custom AI Tools & Automation",      r"""
+   (⌐■_■)
+   <)   )╯ 
+   /    \
+"""),
+    ("✅ Chief AI Advisors at work!",         r"""
+   (⌐■_■)
+    /)  )>
+   /    \
+"""),
 ]
 
 # ----------------------
@@ -86,62 +97,117 @@ def clear():
     """Clear the terminal screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
-def animate(frames, delay=0.7):
-    """Show ASCII animation frames."""
+def pause(prompt="Press Enter to continue..."):
+    """Pause and wait for the user to press Enter."""
+    input(f"\n{prompt}")
+
+def animate_build(frames, delay=0.75):
+    """Show the character building up frame by frame."""
     for frame in frames:
         clear()
-        print(frame)
+        print("\n" + frame)
+        time.sleep(delay)
+
+def animate_finger_guns(gun_frames, delay=1.0):
+    """Show the character doing finger guns with each service message."""
+    for message, pose in gun_frames:
+        clear()
+        print("\n" + pose)
+        print(f"   {message}")
         time.sleep(delay)
 
 def run_workflow(steps):
     """Run the workflow step-by-step with simulated progress."""
-    print("\nStarting AI-assisted workflow simulation...\n")
+    clear()
+    print("\n" + "="*50)
+    print("   🤖 AI-Assisted Workflow Simulation")
+    print("="*50 + "\n")
+    print("Starting AI-assisted workflow simulation...\n")
     for i, step in enumerate(steps, start=1):
         time.sleep(0.7)
-        status = "✅"
-        print(f"Step {i}/{len(steps)}: {step} {status}")
-    print("\nAll workflow steps executed with oversight.\n")
+        print(f"  Step {i}/{len(steps)}: {step} ✅")
+    print("\n" + "-"*50)
+    print("  All workflow steps executed with oversight.")
+    print("-"*50 + "\n")
+    pause("Press Enter to see the workflow summary...")
 
 def summary(steps):
     """Print a summary of completed workflow steps."""
-    print("Workflow Summary:")
+    clear()
+    print("\n" + "="*50)
+    print("   📋 Workflow Summary")
+    print("="*50 + "\n")
     for i, step in enumerate(steps, start=1):
-        print(f"{i}. {step} ✔")
-    print(f"\nTotal steps: {len(steps)} | Status: All completed successfully ✅\n")
+        print(f"  {i}. {step} ✔")
+    print("\n" + "-"*50)
+    print(f"  Total steps : {len(steps)}")
+    print(f"  Status      : All completed successfully ✅")
+    print("-"*50 + "\n")
+    pause("Press Enter to view our services...")
 
 def display_services():
     """Display all services offered by Chief AI Advisors."""
     clear()
-    print("🌟 Chief AI Advisors - Our Services 🌟\n")
+    print("\n" + "="*55)
+    print("   🌟  Chief AI Advisors — Our Services  🌟")
+    print("="*55 + "\n")
+
     services = [
-        "🤖 Custom AI Tools & Automation",
-        "📊 Data Analytics & Insights",
-        "⚖ Compliance & Reporting",
-        "🌐 SEO & AEO Optimization",
-        "💼 Workflow Optimization & Client Solutions",
-        "🛠 IT & AI Integrations",
-        "📈 Business Intelligence & Strategy",
-        "🔒 Data Security & Privacy Management"
+        ("🤖", "Custom AI Tools & Automation"),
+        ("📊", "Data Analytics & Insights"),
+        ("⚖ ", "Compliance & Reporting"),
+        ("🌐", "SEO & AEO Optimization"),
+        ("💼", "Workflow Optimization & Client Solutions"),
+        ("🛠 ", "IT & AI Integrations"),
+        ("📈", "Business Intelligence & Strategy"),
+        ("🔒", "Data Security & Privacy Management"),
     ]
-    for service in services:
-        print(f"- {service}")
-        time.sleep(0.5)
-    print("\nLearn more at: https://chiefaiadvisors.com")
-    print("📞 Call us: +1 (555) 123-4567 | Toll-Free: +1-833-313-7714")
-    print("📧 Email: chiefaiadvisors@gmail.com\n")
+
+    for icon, service in services:
+        print(f"  {icon}  {service}")
+        time.sleep(0.4)
+
+    print("\n" + "-"*55)
+    print("  🌐  https://chiefaiadvisors.com")
+    print("  📞  +1 (555) 123-4567  |  Toll-Free: +1-833-313-7714")
+    print("  📧  chiefaiadvisors@gmail.com")
+    print("-"*55 + "\n")
+    pause("Press Enter to exit...")
 
 # ----------------------
 # Main Execution
 # ----------------------
 if __name__ == "__main__":
-    animate(animation_frames)           # Show ASCII animation with all services
-    run_workflow(workflow_steps)        # Simulate workflow steps
-    summary(workflow_steps)             # Print final summary
-    print("🚀 AI workflow mode activated! Tristan Becker | Chief AI Advisors")
-    print("🌐 Explore all our AI solutions at: https://chiefaiadvisors.com")
-    print("📞 Call us: +1 (555) 123-4567 | Toll-Free: +1-833-313-7714")
-    print("📧 Email us at: chiefaiadvisors@gmail.com")
-    
-    time.sleep(1.5)
-    display_services()                   # Show company services before exit
-    input("Press Enter to exit...")      # Keeps terminal open for double-click use
+    # Step 1: Build up the character
+    animate_build(build_frames, delay=0.75)
+
+    # Step 2: Finger gun poses for each service/message
+    animate_finger_guns(finger_gun_messages, delay=1.1)
+
+    # Hold on the final pose before moving on
+    clear()
+    print(r"""
+   (⌐■_■)
+    /)  )>
+   /    \
+
+   💼 Chief AI Advisors — Let's get to work!
+""")
+    pause("Press Enter to start the workflow simulation...")
+
+    # Step 3: Workflow simulation
+    run_workflow(workflow_steps)
+
+    # Step 4: Summary
+    summary(workflow_steps)
+
+    # Step 5: Services display (stays until Enter)
+    display_services()
+
+    # Exit message
+    clear()
+    print("\n🚀 AI workflow mode activated!")
+    print("   Tristan Becker | Chief AI Advisors")
+    print("   🌐 https://chiefaiadvisors.com")
+    print("   📞 +1 (555) 123-4567  |  Toll-Free: +1-833-313-7714")
+    print("   📧 chiefaiadvisors@gmail.com\n")
